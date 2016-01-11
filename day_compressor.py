@@ -1,4 +1,4 @@
-import os, sys, tarfile
+import os, sys, zipfile
 
 if (len(sys.argv) != 3):
 	print "usage: day_compressor.py /path/to/src/ /path/to/dest/"
@@ -12,13 +12,12 @@ print dest_path
 src_dir_files = os.listdir(src_path)
 
 for i in range (0, len(src_dir_files)):
-	curr_dir_path = src_path + src_dir_files[i]
-	print curr_dir_path
+	curr_dir_path = os.path.join(src_path, src_dir_files[i])
 	if (os.path.isdir(curr_dir_path)):
 		#curr_dir_files = os.listdir(curr_dir_path)
 		#curr_dir_files.sort()
-		tar = tarfile.open(dest_path + src_dir_files[i] + ".tar.gz", "w:gz")
-		tar.add(curr_dir_path, src_dir_files[i])
-		tar.close()
+		zipped = zipfile.ZipFile(dest_path + src_dir_files[i] + ".zip", "w")
+		zipped.write(curr_dir_path, src_dir_files[i])
+		zipped.close()
 
 
