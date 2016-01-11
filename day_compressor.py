@@ -18,7 +18,7 @@ for i in range (0, len(src_dir_files)):
 		#curr_dir_files = os.listdir(curr_dir_path)
 		#curr_dir_files.sort()
 		tar = tarfile.open(dest_path + src_dir_files[i] + ".tar.gz", "w:gz")
-		tar.add(curr_dir_path)
+		tar.add(curr_dir_path, src_dir_files[i])
 		tar.close()
 
 
