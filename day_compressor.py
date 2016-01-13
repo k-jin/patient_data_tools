@@ -1,5 +1,7 @@
 import os, sys, zipfile
 
+# Currently compresses existing directories sorted by day
+
 if (len(sys.argv) != 3):
 	print "usage: day_compressor.py /path/to/src/ /path/to/dest/"
 	print "path should be path to the directory holding all the day directories"
