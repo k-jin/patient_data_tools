@@ -41,6 +41,9 @@ day_compressor.py /path/to/src/ /path/to/dst/
 
 This script zips every directory within the source directory and writes the 
 compressed directory to the destination directory. If there are files in 
-source directory, those are compressed into an "other.zip" file.
+source directory, those are compressed into an "other.zip" file. 
+
+Note: this script does not recurse into directories after the ones found
+in the root. 
 
 
